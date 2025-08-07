@@ -123,7 +123,7 @@ class HeartDiseasePredictor:
                 'recommendations': self._get_recommendations(primary_risk)
             }
         except Exception as e:
-            raise HTTPException(status_code=500, f"Error processing image: {str(e)}")
+            raise HTTPException(status_code=500, detail=f"Error processing image: {str(e)}")
     
     def _generate_analysis(self, predictions, image):
         """Generate detailed analysis of the CT scan"""
